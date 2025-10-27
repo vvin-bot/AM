@@ -312,7 +312,7 @@ const Login = () => {
                         name="verificationCode"
                         value={formData.verificationCode}
                         onChange={handleInputChange}
-                        placeholder="请输入验证码"
+                        placeholder="默认：123456"
                         className="flex-1 px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         required
                       />
@@ -516,7 +516,7 @@ const Login = () => {
                         name="verificationCode"
                         value={formData.verificationCode}
                         onChange={handleInputChange}
-                        placeholder="请输入验证码"
+                        placeholder="默认：123456"
                         className="flex-1 px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         required
                       />
