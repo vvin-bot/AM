@@ -3,14 +3,14 @@ name: Build Electron App
 on:
   push:
     tags: ['v*']
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]  # 只保留 Linux 构建
+        os: [ubuntu-latest]
         
     steps:
     - name: Checkout code
@@ -26,14 +26,17 @@ jobs:
       run: npm install
       
     - name: Build Electron app
-      run: npm run build
+      run: npm run package:linux
+      
+    - name: List build directory contents
+      run: ls -la dist-electron/
       
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: electron-app-linux
         path: |
-          dist/*.AppImage
-          dist/*.deb
-          dist/*.rpm
+          dist-electron/*.AppImage
+          dist-electron/*.deb
+          dist-electron/*.rpm
         retention-days: 30
