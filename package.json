@@ -53,7 +53,6 @@
   },
   "license": "MIT",
   "build": {
-    "publish": "never",
     "appId": "com.yourcompany.react-tailwind-app",
     "productName": "React Tailwind App",
     "directories": {
