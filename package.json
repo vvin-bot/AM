@@ -86,11 +86,6 @@
       ],
       "category": "Utility",
       "icon": "assets/icon.png",
-      "desktop": {
-        "Name": "React Tailwind App",
-        "Comment": "React + Tailwind CSS Application",
-        "Categories": "Utility;Development;"
-      },
       "synopsis": "React + Tailwind CSS 纯前端应用",
       "description": "基于 React 和 Tailwind CSS 构建的现代化桌面应用"
     }
