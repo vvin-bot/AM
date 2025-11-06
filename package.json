@@ -47,7 +47,10 @@
     "frontend",
     "vite"
   ],
-  "author": "",
+  "author": {
+    "name": "AM",
+    "email": "2187182819@qq.com"
+  },
   "license": "MIT",
   "build": {
     "appId": "com.yourcompany.react-tailwind-app",
@@ -87,7 +90,8 @@
       "category": "Utility",
       "icon": "assets/icon.png",
       "synopsis": "React + Tailwind CSS 纯前端应用",
-      "description": "基于 React 和 Tailwind CSS 构建的现代化桌面应用"
+      "description": "基于 React 和 Tailwind CSS 构建的现代化桌面应用",
+      "maintainer": "AM<2187182819@qq.com>"
     }
   }
 }
