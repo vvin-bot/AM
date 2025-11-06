@@ -8,8 +8,8 @@ test.describe('增材制造平台测试', () => {
     // 检查页面标题
     await expect(page.getByRole('heading', { name: '增材制造平台' })).toBeVisible();
 
-    // 检查登录表单元素是否存在
-    await expect(page.getByText('登录', { exact: true })).toBeVisible();
+    // 检查登录表单元素是否存在（限定为表单内的“登录”提交按钮）
+    await expect(page.locator('form').getByRole('button', { name: '登录' })).toBeVisible();
     await expect(page.getByPlaceholder('请输入手机号')).toBeVisible();
     await expect(page.getByPlaceholder('请输入密码')).toBeVisible();
   });
@@ -17,8 +17,8 @@ test.describe('增材制造平台测试', () => {
   test('登录和注册表单切换', async ({ page }) => {
     await page.goto('/');
 
-    // 默认应该显示登录表单
-    await expect(page.getByRole('button', { name: '登录', exact: true })).toBeVisible();
+    // 默认应该显示登录表单（检查表单内的“登录”提交按钮）
+    await expect(page.locator('form').getByRole('button', { name: '登录' })).toBeVisible();
 
     // 点击注册选项卡
     await page.getByRole('button', { name: '注册' }).first().click();
@@ -30,8 +30,8 @@ test.describe('增材制造平台测试', () => {
     // 点击返回登录
     await page.getByRole('button', { name: '登录' }).first().click();
 
-    // 检查是否回到登录表单
-    await expect(page.getByRole('button', { name: '登录', exact: true })).toBeVisible();
+    // 检查是否回到登录表单（检查表单内的“登录”提交按钮）
+    await expect(page.locator('form').getByRole('button', { name: '登录' })).toBeVisible();
   });
 
   test('表单输入功能测试', async ({ page }) => {
@@ -83,8 +83,8 @@ test.describe('增材制造平台测试', () => {
     // 点击返回登录
     await page.getByRole('button', { name: '返回登录' }).click();
 
-    // 检查是否回到登录表单
-    await expect(page.getByRole('button', { name: '登录', exact: true })).toBeVisible();
+    // 检查是否回到登录表单（检查表单内的“登录”提交按钮）
+    await expect(page.locator('form').getByRole('button', { name: '登录' })).toBeVisible();
   });
 
   test('响应式设计测试 - 移动端视图', async ({ page }) => {

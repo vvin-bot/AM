@@ -9,10 +9,10 @@
     "build:frontend": "vite build",
     "electron": "electron .",
     "dev:electron": "npm run build && electron .",
-    "package": "npm run build:frontend && electron-builder",
-    "package:win": "npm run build:frontend && electron-builder --win",
-    "package:mac": "npm run build:frontend && electron-builder --mac",
-    "package:linux": "npm run build:frontend && electron-builder --linux",
+    "package": "npm run build:frontend && electron-builder --publish=never",
+    "package:win": "npm run build:frontend && electron-builder --win --publish=never",
+    "package:mac": "npm run build:frontend && electron-builder --mac --publish=never",
+    "package:linux": "npm run build:frontend && electron-builder --linux --publish=never",
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directs --max-warnings 0"
   },
@@ -53,6 +53,7 @@
   },
   "license": "MIT",
   "build": {
+    "publish": "never",
     "appId": "com.yourcompany.react-tailwind-app",
     "productName": "React Tailwind App",
     "directories": {
